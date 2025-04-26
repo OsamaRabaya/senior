@@ -1,0 +1,318 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Car Offers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .car-card {
+            transition: transform 0.3s ease;
+        }
+        .car-card:hover {
+            transform: scale(1.03);
+        }
+        .navbar {
+            margin-bottom: 2rem;
+        }
+        .car-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .badge-discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f8f9fa; padding: 15px;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logos/Picture1.jpg" width="50" height="50" class="me-2">
+                <span class="fw-bold text-dark">CarRent & Sale</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-dark" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="cars.html">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#contact">Contact Us</a></li>
+               
+                  
+                  
+                    <li class="nav-item">
+                        <button class="btn btn-outline-dark ms-3" data-bs-toggle="modal" data-bs-target="#loginModal" style="border-radius: 8px;">Login</button>
+                        <button class="btn btn-dark ms-2" data-bs-toggle="modal" data-bs-target="#signupModal" style="border-radius: 8px;">Sign Up</button>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <div class="mb-3 text-end">
+                        <a href="#" class="text-decoration-none">Forgot Password?</a>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">Login</button>
+                    <div class="text-center my-3">or</div>
+                    <button type="button" class="btn btn-outline-primary w-100 mb-2">Login with Google</button>
+                    <button type="button" class="btn btn-outline-primary w-100">Login with Facebook</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p class="text-center w-100">Don't have an account? <a href="#register">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="usernameSignup" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="usernameSignup" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordSignup" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="passwordSignup" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Special Car Offers</h1>
+
+        <!-- Discounted Cars for Sale -->
+        <h2 class="mb-4 text-danger">Discounted Cars for Sale</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+            <div class="col">
+                <div class="card car-card h-100 position-relative">
+                    <span class="badge-discount">-50%</span>
+                    <img src="images/Chevrolet Malibu 2020.jfif" class="card-img-top" alt="Sale Offer">
+                    <div class="card-body">
+                        <h5 class="card-title">Chevrolet Malibu 2020</h5>
+                        <p class="card-text">Original Price: $20,000<br>Discounted Price: <strong>$10,000</strong></p>
+                        <a href="#" class="btn btn-success">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card car-card h-100 position-relative">
+                    <span class="badge-discount">-30%</span>
+                    <img src="images/Honda Civic 2021.jfif" class="card-img-top" alt="Sale Offer">
+                    <div class="card-body">
+                        <h5 class="card-title">Honda Civic 2021</h5>
+                        <p class="card-text">Original Price: $22,000<br>Discounted Price: <strong>$15,400</strong></p>
+                        <a href="#" class="btn btn-success">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card car-card h-100 position-relative">
+                    <span class="badge-discount">-20%</span>
+                    <img src="images/Mazda 6 2022.jfif" class="card-img-top" alt="Sale Offer">
+                    <div class="card-body">
+                        <h5 class="card-title">Mazda 6 2022</h5>
+                        <p class="card-text">Original Price: $27,000<br>Discounted Price: <strong>$21,600</strong></p>
+                        <a href="#" class="btn btn-success">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discounted Cars for Rent -->
+        <h2 class="mb-4 text-danger">Discounted Cars for Rent</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card car-card h-100 position-relative">
+                    <span class="badge-discount">-40%</span>
+                    <img src="images/Hyundai Accent 2023.jfif" class="card-img-top" alt="Rent Offer">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyundai Accent 2023</h5>
+                        <p class="card-text">Original Daily Rent: $30<br>Discounted: <strong>$18</strong></p>
+                        <a href="#" class="btn btn-primary">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card car-card h-100 position-relative">
+                    <span class="badge-discount">-25%</span>
+                    <img src="images/2025 Toyota Corolla.jfif" class="card-img-top" alt="Rent Offer">
+                    <div class="card-body">
+                        <h5 class="card-title">Toyota Corolla 2022</h5>
+                        <p class="card-text">Original Weekly Rent: $200<br>Discounted: <strong>$150</strong></p>
+                        <a href="#" class="btn btn-primary">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card car-card h-100 position-relative">
+                    <span class="badge-discount">-10%</span>
+                    <img src="images/BMW 3 Series 2021.jfif" class="card-img-top" alt="Rent Offer">
+                    <div class="card-body">
+                        <h5 class="card-title">BMW 3 Series 2021</h5>
+                        <p class="card-text">Original Daily Rent: $100<br>Discounted: <strong>$90</strong></p>
+                        <a href="#" class="btn btn-primary">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+   
+    <script>
+     
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+         
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('usernameSignup').value;
+            const password = document.getElementById('passwordSignup').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+           
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+        
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long!');
+                return;
+            }
+            
+      
+         
+            alert(`Account created successfully!\nWelcome, ${fullName}!`);
+            
+         
+            const signupModal = bootstrap.Modal.getInstance(document.getElementById('signupModal'));
+            signupModal.hide();
+            
+          
+            this.reset();
+        });
+        
+      
+        document.getElementById('loginForm').addEventListener('submit'), function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+          
+            alert(`Welcome back, ${username}!`);
+            
+         
+            const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+            loginModal.hide();
+        }
+    </script>
+
+
+</body>
+
+</html>

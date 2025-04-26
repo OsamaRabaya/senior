@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Car Rental & Sale</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .contact-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .contact-info img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+        .btn-custom {
+            background-color: #000;
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Contact Section -->
+<div class="container contact-container">
+    <h2 class="text-center mb-4 fw-bold">Get in Touch</h2>
+
+    <!-- Contact Info -->
+    <div class="mb-4">
+        <div class="contact-info">
+            <img src="logos/ph-ico.png" alt="Phone">
+            <span><strong>Phone:</strong> +970 123 456 789</span>
+        </div>
+        <div class="contact-info">
+            <img src="logos/ph-ico2.png" alt="Email">
+            <span><strong>Email:</strong> support@carrentalsale.com</span>
+        </div>
+        <div class="contact-info">
+            <img src="logos/ph-ico3.png" alt="Hours">
+            <span><strong>Working Hours:</strong> Sunday - Thursday, 9:00 AM - 6:00 PM</span>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form action="send_contact.php" method="POST">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="phone" class="form-label">Mobile Number</label>
+                <div class="input-group">
+                    <span class="input-group-text">+970</span>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your mobile number" required>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="helpType" class="form-label">What do you need help with?</label>
+                <select class="form-select" id="helpType" name="helpType" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="rental">Car Rental</option>
+                    <option value="purchase">Car Purchase</option>
+                    <option value="support">Technical Support</option>
+                    <option value="general">General Inquiry</option>
+                </select>
+            </div>
+
+            <div class="col-12 mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject" required>
+            </div>
+
+            <div class="col-12 mb-4">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Describe your issue or inquiry" required></textarea>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-custom">Send Message</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

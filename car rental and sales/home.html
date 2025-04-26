@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental & Sale </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Search</title>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .carousel-item video, .carousel-item img {
+            border-radius: 12px;
+            height: 700px;
+            object-fit: cover;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            margin: 0 8px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        .social-icon:hover {
+            opacity: 1;
+        }
+        .youtube-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 4px;
+        }
+    </style>
+
+
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f8f9fa; padding: 15px;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logos/Picture1.jpg" width="50" height="50" class="me-2"> 
+                <span class="fw-bold text-dark">CarRent & Sale</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-dark" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="cars.html">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="offers.html">Offers</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="con-us.html">Contact Us</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-dark ms-3" data-bs-toggle="modal" data-bs-target="#loginModal" style="border-radius: 8px;">Login</button>
+                        <button class="btn btn-dark ms-2" data-bs-toggle="modal" data-bs-target="#signupModal" style="border-radius: 8px;">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </nav>
+
+  <!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="loginEmail" name="email" placeholder="Enter your email" required>
+            </div>
+  
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Enter your password" required>
+            </div>
+  
+            <div class="mb-3 text-end">
+              
+                <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" class="text-decoration-none">Forgot Password?</a>
+            
+            </div>
+
+
+  
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+  
+            <button type="submit" class="btn btn-dark w-100">Login</button>
+  
+            <div class="text-center my-3">or</div>
+  
+            <button type="button" class="btn btn-outline-primary w-100 mb-2">
+              <i class="bi bi-google me-2"></i> Login with Google
+            </button>
+            <button type="button" class="btn btn-outline-primary w-100">
+              <i class="bi bi-facebook me-2"></i> Login with Facebook
+            </button>
+          </form>
+        </div>
+  
+        <div class="modal-footer">
+          <div class="auth-cta-container d-flex flex-column align-items-center justify-content-center py-3">
+            <p class="text-center w-100 mt-3 auth-text" style="color: #6c757d;">
+              Don't have an account? 
+              <a href="#signupModal" 
+                 class="auth-link position-relative" 
+                 style="color: #0d6efd; text-decoration: none;"
+                 data-bs-toggle="modal" 
+                 data-bs-target="#signupModal">
+                Sign up
+                <span class="underline-animation" style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background-color: #0d6efd; transition: width 0.3s ease;"></span>
+              </a>
+            </p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal - Forgot Password -->
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">Reset Password</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="forgotPasswordForm">
+            <div class="mb-3">
+              <label for="resetMethod" class="form-label">Choose Reset Method</label>
+              <select class="form-select" id="resetMethod">
+                <option value="">-- Select --</option>
+                <option value="email">By Email</option>
+                <option value="phone">By Phone Number</option>
+             
+              </select>
+            </div>
+  
+            <div class="mb-3 d-none" id="emailField">
+              <label for="resetEmail" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="resetEmail" placeholder="example@example.com">
+            </div>
+  
+            <div class="mb-3 d-none" id="phoneField">
+              <label for="resetPhone" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" id="resetPhone" placeholder="Example: 05XXXXXXXX">
+            </div>
+  
+            <button type="submit" class="btn btn-dark w-100 mt-3">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+ <form id="registerForm">
+    <input type="text" placeholder="الاسم الكامل" id="fullName" required><br>
+    <input type="email" placeholder="البريد الإلكتروني" id="email" required><br>
+    <input type="password" placeholder="كلمة المرور" id="password" required><br>
+    <input type="text" placeholder="رقم الهاتف" id="phone" required><br>
+    <button type="submit">تسجيل</button>
+  </form>
+
+  <p id="result"></p>
+
+
+<!-- Sign Up Modal -->
+   <!--         <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" name="fullName" required>
+            </div>
+  
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+  
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="+970XXXX" required>
+            </div>
+  
+            <div class="mb-3">
+              <label for="usernameSignup" class="form-label">Username</label>
+              <input type="text" class="form-control" id="usernameSignup" name="username" required>
+            </div>
+  
+            <div class="mb-3">
+              <label for="passwordSignup" class="form-label">Password</label>
+              <input type="password" class="form-control" id="passwordSignup" name="password" required>
+            </div>
+  
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+            </div>
+  
+            <button type="submit" class="btn btn-dark w-100">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  --> 
+
+
+   
+    <!-- Hero Section - Carousel -->
+    <div id="carCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel" style="margin-top: 20px;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="https://www.toyota.com/grandhighlanderhybrid/" target="_blank">
+                    <video autoplay muted loop class="d-block w-100">
+                        <source src="videos/toy.mp4" type="video/mp4">
+                        <source src="videos/toy.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="https://www.mercedes-benz.com/en/vehicles/cla-class-of-its-own/" target="_blank">
+                    <video autoplay muted loop class="d-block w-100">
+                        <source src="videos/merc.mp4" type="video/mp4">
+                        <source src="videos/merc.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="https://www.bmwusa.com/vehicles/m-series/m3-series/bmw-m3-sedan.html" target="_blank">
+                    <img src="images/car3.jpeg" class="d-block w-100" alt="Car 3">
+                </a>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    
+                <div class="container mt-5 p-4 rounded-4 shadow-lg" style="background: linear-gradient(145deg, #f0f0f0, #d4d4d4);">
+                    <div class="card p-4 border-0" style="background-color: #fff; border-radius: 20px;">
+                        <h3 class="text-center mb-4" style="font-weight: bold; color: #333;">Search for a Car</h3>
+                        <form class="row g-3" id="searchForm">
+                            <div class="col-md-4">
+                                <label for="carType" class="form-label" style="font-weight: bold;">Car Type</label>
+                                <select id="carType" class="form-select shadow-sm" style="border-radius: 12px;">
+                                    <option selected>Choose...</option>
+                                    <option>Sedan</option>
+                                    <option>SUV</option>
+                                    <option>Truck</option>
+                                    <option>Convertible</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="buy-rent" class="form-label" style="font-weight: bold;">Type of operation</label>
+                                <select id="buy-rent" class="form-select shadow-sm" style="border-radius: 12px;">
+                                    <option selected>Choose...</option>
+                                    <option>Buy</option>
+                                    <option>Rent</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="carModel" class="form-label" style="font-weight: bold;">Model</label>
+                                <input type="text" class="form-control shadow-sm" id="carModel" placeholder="Enter Model" style="border-radius: 12px;">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="priceRange" class="form-label" style="font-weight: bold;">Price Range</label>
+                                <input type="number" class="form-control shadow-sm" id="priceRange" placeholder="Max Price" style="border-radius: 12px;">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="carCondition" class="form-label" style="font-weight: bold;">Condition</label>
+                                <select id="carCondition" class="form-select shadow-sm" style="border-radius: 12px;">
+                                    <option selected>Choose...</option>
+                                    <option>New</option>
+                                    <option>Used</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="carCategory" class="form-label" style="font-weight: bold;">Category</label>
+                                <select id="carCategory" class="form-select shadow-sm" style="border-radius: 12px;">
+                                    <option selected>Choose...</option>
+                                    <option>Luxury</option>
+                                    <option>Economy</option>
+                                    <option>Sports</option>
+                                </select>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-dark px-4 py-2 mt-3" style="border-radius: 20px;" id="submitBtn">
+                                    Search
+                                    <span id="spinner" class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true" style="display: none;"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+    
+
+    <!-- Car Offers Section -->
+    <div class="container mt-5 p-4 rounded-4 shadow-lg" id="offers" style="background: linear-gradient(145deg, #f0f0f0, #d4d4d4);">
+        <h2 class="text-center mb-4" style="font-weight: bold; color: #333;">Our Latest Offers</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm" style="border-radius: 20px; overflow: hidden; height: 100%;">
+                    <img src="images/2025 Toyota Corolla.jfif" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Toyota Corolla">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">2025 Toyota Corolla</h5>
+                        <p>Special price: $20,000</p>
+                        <p>Rental: $50/day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm" style="border-radius: 20px; overflow: hidden; height: 100%;">
+                    <img src="images/2025 BMW X5.jfif" class="card-img-top" style="height: 200px; object-fit: cover;" alt="BMW X5">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">2025 BMW X5</h5>
+                        <p>Special price: $60,000</p>
+                        <p>Rental: $150/day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm" style="border-radius: 20px; overflow: hidden; height: 100%;">
+                    <img src="images/2025 Mercedes S-Class.jfif" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Mercedes S-Class">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">2025 Mercedes S-Class</h5>
+                        <p>Special price: $80,000</p>
+                        <p>Rental: $200/day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div style="position: relative; width: 100%; text-align: center; margin-top: 30px;">
+        <img src="images/im.jpeg" alt="Car Marketplace" style="width: 100%; height: 700px; object-fit: cover; border-radius: 8px;">
+        <div class="hero-text">
+            The Best Platform for Buying, Selling, and Renting Cars – Discover Exclusive Deals Now!
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer style="background-color: #f8f8f8; padding: 20px; margin-top: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; margin: 10px;">
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="#" style="text-decoration: none; color: #000;">Privacy Policy</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #000;">Terms</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #000;">Do Not Sell My Personal Information</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #000;">Manage Cookies</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; text-align: center; margin: 10px;">
+                <p>© 2025 Car Rental & Sales. All rights reserved.</p>
+            </div>
+            <div style="display: flex; justify-content: flex-end; align-items: center; margin: 10px;">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="logos/face.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <img src="logos/x.png" alt="Twitter" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="logos/ins.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <img src="logos/youtube.png" alt="YouTube" class="social-icon youtube-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+       <!--    <script>
+      document.getElementById('signupForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+    
+        // جمع البيانات من النموذج
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const username = document.getElementById('usernameSignup').value.trim();
+        const password = document.getElementById('passwordSignup').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+    
+        // تحقق من أن كلمة المرور متطابقة
+        if (password !== confirmPassword) {
+          alert('Passwords do not match!');
+          return;
+        }
+    
+        // تحقق من أن جميع الحقول مملوءة
+        if (!fullName || !email || !phone || !username || !password) {
+          alert('Please fill in all the required fields.');
+          return;
+        }
+    
+        try {
+          // إرسال البيانات إلى الـ Backend
+          const response = await fetch('http://localhost:5000/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fullName, email, phone, username, password,  confirmPassword  })
+          });
+    
+          const data = await response.json();
+    
+          // تحقق من إذا كان التسجيل ناجحاً أو فشل
+          if (response.ok) {
+            alert(data.message);
+            bootstrap.Modal.getInstance(document.getElementById('signupModal')).hide();
+            this.reset();
+          } else {
+            alert(data.message || 'Registration failed.');
+          }
+        } catch (err) {
+          alert('Server error. Please try again.');
+        }
+      });
+    </script>
+    
+  --> 
+
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const response = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          fullName: document.getElementById('fullName').value,
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value,
+          phone: document.getElementById('phone').value
+        })
+      });
+
+      const result = await response.json();
+      document.getElementById('result').textContent = result.message || 'تم';
+    });
+ 
+    </script>
+    
+       
+
+
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const email    = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+console.log(email)
+console.log(password)
+
+  try {
+    const res = await fetch('http://localhost:5000/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || 'Login failed');
+
+    // خزّن التوكن
+    localStorage.setItem('token', data.token);
+    console.log('Logged in, token:', data.token);
+
+    // بعدين أنتقل لجلب بيانات الـ dashboard
+    fetchDashboard();
+  } catch (err) {
+    console.error('❌ خطأ أثناء تسجيل الدخول:', err.message);
+  }
+});
+
+    </script>
+    
+
+<script>
+async function fetchDashboard() {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    console.error('No token, please login first');
+    return;
+  }
+
+  try {
+    const res = await fetch('http://localhost:5000/api/dashboard/', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type':  'application/json'
+      }
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || 'Failed to fetch dashboard');
+
+    console.log('Dashboard data:', data);
+  } catch (err) {
+    console.error('Error fetching dashboard:', err.message);
+  }
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript to handle spinner display -->
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('spinner').style.display = 'inline-block';  // Show spinner
+            setTimeout(function() {
+                // Simulating an API call
+                document.getElementById('spinner').style.display = 'none';  // Hide spinner
+                alert('Search completed!');
+            }, 2000);  // Simulate delay (2 seconds)
+        });
+    </script>
+
+
+
+<script>
+  const resetMethod = document.getElementById('resetMethod');
+  const emailField = document.getElementById('emailField');
+  const phoneField = document.getElementById('phoneField');
+
+  // إظهار أو إخفاء الحقول بناءً على طريقة إعادة تعيين كلمة المرور
+  resetMethod.addEventListener('change', () => {
+    emailField.classList.add('d-none');
+    phoneField.classList.add('d-none');
+
+    if (resetMethod.value === 'email') {
+      emailField.classList.remove('d-none');
+    } else if (resetMethod.value === 'phone') {
+      phoneField.classList.remove('d-none');
+    } else if (resetMethod.value === 'both') {
+      emailField.classList.remove('d-none');
+      phoneField.classList.remove('d-none');
+    }
+  });
+
+  document.getElementById('forgotPasswordForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // جمع البيانات من النموذج
+    const method = resetMethod.value;
+    const email = document.getElementById('resetEmail').value.trim();
+    const phone = document.getElementById('resetPhone').value.trim();
+
+    // إرسال البيانات إلى الـ Backend
+    const res = await fetch('/api/forgot-password', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ method, email, phone })
+    });
+
+    const data = await res.json();
+
+    // إظهار رسالة بعد إرسال الرابط
+    alert(data.message || 'تم إرسال رابط إعادة التعيين');
+  });
+</script>
+
+           
+     
+      
+
+
+
+
+
+
+
+
+
+<!-- تأكد أن هذا موجود في نهاية الـ body -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const resetMethod = document.getElementById('resetMethod');
+      const emailField = document.getElementById('emailField');
+      const phoneField = document.getElementById('phoneField');
+  
+      resetMethod.addEventListener('change', () => {
+        emailField.classList.add('d-none');
+        phoneField.classList.add('d-none');
+  
+        if (resetMethod.value === 'email') {
+          emailField.classList.remove('d-none');
+        } else if (resetMethod.value === 'phone') {
+          phoneField.classList.remove('d-none');
+        } else if (resetMethod.value === 'both') {
+          emailField.classList.remove('d-none');
+          phoneField.classList.remove('d-none');
+        }
+      });
+  
+      document.getElementById('forgotPasswordForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const method = resetMethod.value;
+        const email = document.getElementById('resetEmail').value;
+        const phone = document.getElementById('resetPhone').value;
+  
+        const res = await fetch('/api/forgot-password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ method, email, phone })
+        });
+  
+        const data = await res.json();
+        alert(data.message || 'تم الإرسال');
+      });
+    });
+  </script>
+  
+
+
+
+
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // منع إرسال النموذج بشكل تقليدي
+  
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+  
+      // مثال باستخدام fetch لطلب تسجيل الدخول (يفترض وجود API backend لهذا)
+      fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Login failed');
+        return response.json();
+      })
+      .then(data => {
+        // ✅ تسجيل الدخول تم بنجاح
+        // احفظ الـ Token أو البيانات إذا لزم الأمر
+        // ثم حول المستخدم إلى صفحة المستخدم:
+        window.location.href = "user-page.html"; // غيّر اسم الصفحة حسب اسم صفحة اليوزر
+      })
+      .catch(error => {
+        alert('Login failed. Please check your credentials.');
+        console.error(error);
+      });
+    });
+  </script>
+  
+
+
+
+
+
+
+
+</body>
+           
