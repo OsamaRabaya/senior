@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Sales & Rental Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="left-links">
+      <a href="#" class="nav-link active" data-target="homeSection">Home</a>
+      <a href="#" class="nav-link" data-target="browseSection">Browse Cars</a>
+      <a href="#" class="nav-link" data-target="carDetailsSection">Car Details</a>
+      <a href="#" class="nav-link" data-target="addCarSection">Add Car</a>
+      <a href="#" class="nav-link" data-target="rentalsSection">Rentals</a>
+      <a href="#" class="nav-link" data-target="requestsSection">Car Requests</a>
+    </div>
+    <div class="right-actions">
+      <a href="#" aria-label="View Messages">Messages</a>
+      <img src="user.png" alt="User Profile Picture" />
+      <button onclick="logout()" aria-label="Logout">Logout</button>
+    </div>
+  </header>
+
+  <section id="homeSection" class="section active main">
+    <h1>Welcome!</h1>
+    <p>With this platform, you can browse, add, rent, and request cars easily.</p>
+    <p>Start exploring our platform by navigating through the menu above.</p>
+  </section>
+
+  <section id="browseSection" class="section browse">
+    <h2>Browse Cars</h2>
+    <div class="filters">
+      <form id="filterForm">
+        <label>Car Type:
+          <select id="carType">
+            <option value="">All</option>
+            <option value="sale">Sale</option>
+            <option value="rent">Rent</option>
+          </select>
+        </label>
+        <label>Brand:
+          <select id="brand">
+            <option value="">All</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="BMW">BMW</option>
+          </select>
+        </label>
+        <label>Price From:
+          <input type="number" id="minPrice" placeholder="Min" />
+        </label>
+        <label>Price To:
+          <input type="number" id="maxPrice" placeholder="Max" />
+        </label>
+        <button type="submit">Apply Filter</button>
+      </form>
+    </div>
+    <div class="car-list" id="carList">
+      <p>No cars available. Please adjust your filters or check back later.</p>
+    </div>
+  </section>
+
+  <section id="carDetailsSection" class="section">
+    <h2>Car Details</h2>
+    <div id="carDetailsContent" tabindex="0">Select a car to view details.</div>
+  </section>
+
+  <section id="addCarSection" class="section">
+    <h2>Add a New Car</h2>
+    <form id="addCarForm" aria-label="Add a new car">
+      <input type="text" id="carName" placeholder="Car Name" required />
+      <input type="text" id="carBrand" placeholder="Brand" required />
+      <input type="number" id="carPrice" placeholder="Price" required />
+      <select id="carTypeInput" required>
+        <option value="">Select Type</option>
+        <option value="sale">Sale</option>
+        <option value="rent">Rent</option>
+      </select>
+      <button type="submit" aria-label="Submit new car details">Add Car</button>
+    </form>
+  </section>
+
+  <section id="rentalsSection" class="section">
+    <h2>Rentals</h2>
+    <form onsubmit="alert('Rental request sent!'); return false;" aria-label="Request a car rental">
+      <input type="text" placeholder="Enter car name to rent" required />
+      <button type="submit">Send Rental Request</button>
+    </form>
+  </section>
+
+  <section id="requestsSection" class="section">
+    <h2>Requested Cars</h2>
+    <form onsubmit="alert('Car request sent!'); return false;" aria-label="Request a specific car">
+      <input type="text" placeholder="Describe the car you need" required />
+      <button type="submit">Request Car</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    © 2025 Car Sales & Rental Platform - All rights reserved
+    <p>Follow us on <a href="#" aria-label="Visit our Facebook page">Facebook</a> and <a href="#" aria-label="Visit our Twitter page">Twitter</a>.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
